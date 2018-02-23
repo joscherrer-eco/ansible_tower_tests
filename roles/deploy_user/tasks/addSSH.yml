@@ -10,8 +10,8 @@
 - name: Change .ssh attributes
   file: 
     path: /home/{{sshuser}}/.ssh
-    owner: {{sshuser}}
-    group: {{sshuser}}
+    owner: "{{sshuser}}"
+    group: "{{sshuser}}"
     mode: 700
     recursive: yes
 
