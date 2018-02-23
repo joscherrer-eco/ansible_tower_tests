@@ -1,5 +1,4 @@
 ---
-- include: "sudo.yml"
 - include: "createuser.yml"
 - include: "addSSH.yml"
 ...
