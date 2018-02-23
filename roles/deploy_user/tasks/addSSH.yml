@@ -13,7 +13,7 @@
     owner: "{{sshuser}}"
     group: "{{sshuser}}"
     mode: 700
-    recursive: yes
+    recurse: yes
 
 - name: chmod the .ssh folder
   file: 
