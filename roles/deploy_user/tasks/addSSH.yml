@@ -1,4 +1,4 @@
 ---
 - name: Add an SSH key to the .ssh/authorized_keys file
-  shell: home_folder=$( getent passwd "{{sshuser}}" | cut -d: -f6 ); if grep -Fxq "$SSH_KEY" $home_folder/.ssh/authorized_keys; then echo "ssh key exists" ; else echo $SSH_KEY >> $home_folder/.ssh/authorized_keys ; fi
+  shell: home_folder=$( getent passwd "{{sshuser}}" | cut -d: -f6 ); if grep -Fxq "{{sshkey}}" $home_folder/.ssh/authorized_keys; then echo "ssh key exists" ; else echo {{sshkey}} >> $home_folder/.ssh/authorized_keys ; fi
 ...
