@@ -1,9 +1,19 @@
 ---
-- name: Add an SSH key to the .ssh/authorized_keys file
+- name: Create .ssh
   shell: mkdir /home/{{sshuser}}/.ssh
+
+- name: Create authorized_keys
   shell: touch /home/{{sshuser}}/.ssh/authorized_keys
+
+- name: chown .ssh
   shell: chown {{sshuser}}:{{sshuser}} -R /home/{{sshuser}}/.ssh
+
+- name: chmod the .ssh folder
   shell: chmod 700 -R /home/{{sshuser}}/.ssh
+
+- name: chmod the authorized_keys file
   shell: chmod 600 /home/{{sshuser}}/.ssh/authorized_keys
+
+- name: Add an SSH key to the .ssh/authorized_keys file
   shell: echo "{{sshkey}}" >> /home/{{sshuser}}/.ssh/authorized_keys
 ...
