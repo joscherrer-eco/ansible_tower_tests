@@ -1,0 +1,9 @@
+---
+
+- name: Add a new user
+  hosts: all
+  roles:
+    - deploy_user
+
+...
+
