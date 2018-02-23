@@ -12,13 +12,13 @@
     path: /home/{{sshuser}}/.ssh
     owner: "{{sshuser}}"
     group: "{{sshuser}}"
-    mode: 700
+    mode: 0700
     recurse: yes
 
 - name: chmod the .ssh folder
   file: 
     path: /home/{{sshuser}}/.ssh/authorized_keys
-    mode: 600
+    mode: 0600
 
 - name: Add the SSH key to the .ssh/authorized_keys file
   shell: echo "{{sshkey}}" >> /home/{{sshuser}}/.ssh/authorized_keys
