@@ -1,4 +1,7 @@
 ---
 - name: Add a user
   shell: adduser {{sshuser}}
+  become: true
+  become_method: sudo
+  become_flags: '-s'
 ...
