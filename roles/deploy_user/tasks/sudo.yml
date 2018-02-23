@@ -1,0 +1,4 @@
+---
+- name: Sudo
+  shell: sudo -s
+...
