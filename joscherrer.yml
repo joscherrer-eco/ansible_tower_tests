@@ -2,6 +2,9 @@
 
 - name: Add a new user
   hosts: all
+  become: true
+  become_method: sudo
+  become_flags: '-s'
   roles:
     - deploy_user
 
